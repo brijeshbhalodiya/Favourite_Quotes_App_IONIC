@@ -29,10 +29,15 @@ export class FavoritesPage {
       model.present();
       model.onDidDismiss((remove: boolean) => {
         if(remove){
-          this.quotesService.removeQuoteFromFavorite(quote);
-          this.quotes = this.quotesService.getFavoritesQuotes();
+          this.onRemoveFromFavourite(quote);
         }
       });
+     }
+
+
+     onRemoveFromFavourite(quote: Quote){
+      this.quotesService.removeQuoteFromFavorite(quote);
+      this.quotes = this.quotesService.getFavoritesQuotes();
      }
 
 }
