@@ -27,8 +27,11 @@ export class FavoritesPage {
      onViewQuote(quote: Quote){
       const model = this.modelCtrl.create(QuotePage, quote);
       model.present();
-      model.onDidDismiss(remove => {
-        
+      model.onDidDismiss((remove: boolean) => {
+        if(remove){
+          this.quotesService.removeQuoteFromFavorite(quote);
+          this.quotes = this.quotesService.getFavoritesQuotes();
+        }
       });
      }
 

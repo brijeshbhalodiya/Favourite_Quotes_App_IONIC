@@ -42,4 +42,29 @@ export class QuotesPage implements OnInit {
 
   }
 
+  onRemoveFromFav(quote: Quote){
+    const alert = this.alertCtrl.create({
+      title: "Unfavourite Quote",
+      message: "Are you sure you want to unfavourite quote?",
+      buttons: [{
+        text: 'Yes',
+        handler: () => {
+          this.quotesService.removeQuoteFromFavorite(quote);
+        }
+      }, {
+        text: 'No',
+        role: 'cancel',
+        handler: () => {
+          console.log("No");
+        }
+      }]
+    });
+
+    alert.present();
+  }
+
+  isFavourite(quote: Quote){
+    return this.quotesService.isQuoteFavourite(quote);
+  }
+
 }
