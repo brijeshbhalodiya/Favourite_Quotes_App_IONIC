@@ -1,4 +1,4 @@
-<ion-tabs>
+<ion-tabs [selectedIndex]="getselectedPageIndex()">
     <ion-tab [root]="favPage" tabTitle="Favorites" tabIcon="star"></ion-tab>
     <ion-tab [root]="libPage" tabTitle="Library" tabIcon="book"></ion-tab>
 </ion-tabs>

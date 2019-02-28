@@ -9,4 +9,12 @@ page-quotes {
             content: '- ';
         }
     }
+
+    .content{
+        background-image: linear-gradient(red, yellow);
+    }
+
+    .quote-img{
+        border-radius: 10%;
+    }
 }

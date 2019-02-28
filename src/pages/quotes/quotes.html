@@ -11,6 +11,7 @@
     </ion-card-header>
     <ion-card-content>
       <p>{{ quote.text }}</p>
+      <img [src]="quote.image" class="quote-img" />
       <p class="author">{{ quote.person | uppercase }}</p>
     </ion-card-content>
     <ion-row>
